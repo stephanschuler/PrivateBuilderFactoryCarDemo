@@ -33,10 +33,19 @@ $car2 = Car::build(function (CarBuilder $car) {
         ->setEngine(180, 90);
 });
 
+$car3 = Car::getBuilder()
+    ->addWheel(18)
+    ->addWheel(18)
+    ->addWheel(18)
+    ->addWheel(18)
+    ->setEngine(200, 90)
+    ->__invoke();
+
 printf(
     '<pre>%s</pre>',
     json_encode([
         $car1,
-        $car2
+        $car2,
+        $car3,
     ])
 );
