@@ -19,6 +19,10 @@ class Car implements \JsonSerializable
 
     protected $rightRearWheel;
 
+    private function __construct()
+    {
+    }
+
     public function jsonSerialize()
     {
         return [
