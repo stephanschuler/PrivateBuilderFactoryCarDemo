@@ -1,7 +1,7 @@
 <?php
 
 use Composer\Autoload\ClassLoader;
-use StephanSchuler\PrivateBuilderFactory\Builder\CarBuilder;
+use StephanSchuler\PrivateBuilderFactory\Builder\Car\CarBuilder;
 use StephanSchuler\PrivateBuilderFactory\Model\Car;
 
 /** @var ClassLoader $autoloader */

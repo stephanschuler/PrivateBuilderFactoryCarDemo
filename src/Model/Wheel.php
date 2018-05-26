@@ -3,16 +3,22 @@ declare(strict_types=1);
 
 namespace StephanSchuler\PrivateBuilderFactory\Model;
 
-class Wheel implements \JsonSerializable
+use StephanSchuler\PrivateBuilderFactory\Builder\Wheel\WheelBuilderTrait;
+
+class Wheel implements Buildable, \JsonSerializable
 {
+    use WheelBuilderTrait;
+
     protected $car;
 
     protected $size;
 
-    public function __construct(Car $car, int $size)
+    private function __construct()
     {
-        $this->car = $car;
-        $this->size = $size;
+    }
+
+    private function initializeObject()
+    {
     }
 
     public function jsonSerialize()

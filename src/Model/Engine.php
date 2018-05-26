@@ -3,19 +3,24 @@ declare(strict_types=1);
 
 namespace StephanSchuler\PrivateBuilderFactory\Model;
 
-class Engine implements \JsonSerializable
+use StephanSchuler\PrivateBuilderFactory\Builder\Engine\EngineBuilderTrait;
+
+class Engine implements Buildable, \JsonSerializable
 {
+    use EngineBuilderTrait;
+
     protected $car;
 
     protected $volume;
 
     protected $performance;
 
-    public function __construct(Car $car, float $volume, int $performance)
+    private function __construct()
     {
-        $this->car = $car;
-        $this->volume = $volume;
-        $this->performance = $performance;
+    }
+
+    private function initializeObject()
+    {
     }
 
     public function jsonSerialize()

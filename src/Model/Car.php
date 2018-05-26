@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace StephanSchuler\PrivateBuilderFactory\Model;
 
-use StephanSchuler\PrivateBuilderFactory\Builder\CarBuilderTrait;
+use StephanSchuler\PrivateBuilderFactory\Builder\Car\CarBuilderTrait;
 
-class Car implements \JsonSerializable
+class Car implements Buildable, \JsonSerializable
 {
     use CarBuilderTrait;
 
