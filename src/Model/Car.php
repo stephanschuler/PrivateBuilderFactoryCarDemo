@@ -23,6 +23,10 @@ class Car implements \JsonSerializable
     {
     }
 
+    private function initializeObject()
+    {
+    }
+
     public function jsonSerialize()
     {
         return [

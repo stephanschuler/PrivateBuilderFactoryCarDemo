@@ -42,6 +42,8 @@ trait CarBuilderTrait
             $car->leftRearWheel = new Wheel($car, ...$wheels[2]);
             $car->rightRearWheel = new Wheel($car, ...$wheels[3]);
 
+            $car->initializeObject();
+
             return $car;
         };
 
