@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace StephanSchuler\PrivateCarConstructorDemo\Model;
+namespace StephanSchuler\PrivateBuilderFactory\Model;
 
-use StephanSchuler\PrivateCarConstructorDemo\Builder\CarBuilderTrait;
+use StephanSchuler\PrivateBuilderFactory\Builder\CarBuilderTrait;
 
 class Car implements \JsonSerializable
 {

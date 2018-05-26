@@ -1,5 +1,5 @@
 {
-    "name": "stephanschuler/private-car-constructor-demo",
+    "name": "stephanschuler/private-builder-factory-car-demo",
     "description": "",
     "type": "library",
     "license": "MIT",
@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "StephanSchuler\\PrivateCarConstructorDemo\\": "src"
+            "StephanSchuler\\PrivateBuilderFactory\\": "src"
         }
     }
 }

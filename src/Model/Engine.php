@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace StephanSchuler\PrivateCarConstructorDemo\Model;
+namespace StephanSchuler\PrivateBuilderFactory\Model;
 
 class Engine implements \JsonSerializable
 {

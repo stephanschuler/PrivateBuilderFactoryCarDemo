@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace StephanSchuler\PrivateCarConstructorDemo\Builder;
+namespace StephanSchuler\PrivateBuilderFactory\Builder;
 
-use StephanSchuler\PrivateCarConstructorDemo\Model\Car;
-use StephanSchuler\PrivateCarConstructorDemo\Model\Engine;
-use StephanSchuler\PrivateCarConstructorDemo\Model\Wheel;
+use StephanSchuler\PrivateBuilderFactory\Model\Car;
+use StephanSchuler\PrivateBuilderFactory\Model\Engine;
+use StephanSchuler\PrivateBuilderFactory\Model\Wheel;
 
 trait CarBuilderTrait
 {

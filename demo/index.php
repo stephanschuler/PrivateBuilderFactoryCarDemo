@@ -1,8 +1,8 @@
 <?php
 
 use Composer\Autoload\ClassLoader;
-use StephanSchuler\PrivateCarConstructorDemo\Builder\CarBuilder;
-use StephanSchuler\PrivateCarConstructorDemo\Model\Car;
+use StephanSchuler\PrivateBuilderFactory\Builder\CarBuilder;
+use StephanSchuler\PrivateBuilderFactory\Model\Car;
 
 /** @var ClassLoader $autoloader */
 $autoloader = require_once __DIR__ . '/../vendor/autoload.php';

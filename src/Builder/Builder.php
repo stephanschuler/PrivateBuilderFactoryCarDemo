@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace StephanSchuler\PrivateCarConstructorDemo\Builder;
+namespace StephanSchuler\PrivateBuilderFactory\Builder;
 
 /**
  * A builder doesn't actually build an object but holds information about the

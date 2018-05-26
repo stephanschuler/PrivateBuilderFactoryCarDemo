@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace StephanSchuler\PrivateCarConstructorDemo\Builder;
+namespace StephanSchuler\PrivateBuilderFactory\Builder;
 
 interface CarBuilder extends Builder
 {
