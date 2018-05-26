@@ -3,8 +3,12 @@ declare(strict_types=1);
 
 namespace StephanSchuler\PrivateCarConstructorDemo\Model;
 
+use StephanSchuler\PrivateCarConstructorDemo\Builder\CarBuilderTrait;
+
 class Car implements \JsonSerializable
 {
+    use CarBuilderTrait;
+
     protected $engine;
 
     protected $leftFrontWheel;
