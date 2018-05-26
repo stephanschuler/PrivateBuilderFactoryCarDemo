@@ -53,23 +53,26 @@ trait CarBuilderTrait
          * @var callable $factory
          * @return Car
          */
-        $factory = function (array $arguments): Car {
-            /**
-             * @var Car $car
-             * @var Car $this
-             */
-            $className = get_called_class();
-            $car = new $className;
-
-            foreach ($arguments as $propertyName => $propertyAguments) {
-                $propertyClassName = array_shift($propertyAguments);
-                $car->{$propertyName} = new $propertyClassName($car, ...$propertyAguments);
-            }
-
-            $car->initializeObject();
-
-            return $car;
-        };
+        static $factory;
+        if (is_null($factory)) {
+            $factory = function (callable $arguments): Car {
+                /** @var Car $car */
+                $className = get_called_class();
+                $car = new $className;
+                foreach ((array)$arguments($car) as $key => $value) {
+                    if (property_exists($className, $key)) {
+                        $car->{$key} = $value;
+                    }
+                }
+                $car->initializeObject();
+                return $car;
+            };
+        }
         return new CarBuilder($factory);
+    }
+
+    protected function __set_state()
+    {
+
     }
 }
