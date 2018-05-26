@@ -13,7 +13,7 @@ $car1 = Car::build(function (CarBuilder $car) {
      * automatically just after this closure returns.
      */
     $car
-        ->setEngine(300, 350)
+        ->setEngine(3.0, 350)
         ->addWheel(20)
         ->addWheel(20)
         ->addWheel(21)
@@ -30,7 +30,7 @@ $car2 = Car::build(function (CarBuilder $car) {
         ->addWheel(16)
         ->addWheel(16)
         ->addWheel(16)
-        ->setEngine(180, 90);
+        ->setEngine(1.8, 90);
 });
 
 $car3 = Car::getBuilder()
@@ -38,7 +38,7 @@ $car3 = Car::getBuilder()
     ->addWheel(18)
     ->addWheel(18)
     ->addWheel(18)
-    ->setEngine(200, 90)
+    ->setEngine(2.0, 90)
     ->__invoke();
 
 printf(

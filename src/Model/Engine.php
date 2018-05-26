@@ -11,7 +11,7 @@ class Engine implements \JsonSerializable
 
     protected $performance;
 
-    public function __construct(Car $car, int $volume, int $performance)
+    public function __construct(Car $car, float $volume, int $performance)
     {
         $this->car = $car;
         $this->volume = $volume;

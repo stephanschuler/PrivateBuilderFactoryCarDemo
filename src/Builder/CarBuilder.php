@@ -21,7 +21,7 @@ class CarBuilder implements Builder
         return ($this->factory)($this->engine, $this->wheels);
     }
 
-    public function setEngine(int $volume, int $performance): CarBuilder
+    public function setEngine(float $volume, int $performance): CarBuilder
     {
         $this->engine = [$volume, $performance];
         return $this;
