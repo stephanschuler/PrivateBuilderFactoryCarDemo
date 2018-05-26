@@ -4,8 +4,6 @@ declare(strict_types=1);
 namespace StephanSchuler\PrivateBuilderFactory\Builder;
 
 use StephanSchuler\PrivateBuilderFactory\Model\Car;
-use StephanSchuler\PrivateBuilderFactory\Model\Engine;
-use StephanSchuler\PrivateBuilderFactory\Model\Wheel;
 
 trait CarBuilderTrait
 {
@@ -55,7 +53,7 @@ trait CarBuilderTrait
          * @var callable $factory
          * @return Car
          */
-        $factory = function ($engine, $wheels) {
+        $factory = function (array $arguments): Car {
             /**
              * @var Car $car
              * @var Car $this
@@ -63,11 +61,10 @@ trait CarBuilderTrait
             $className = get_called_class();
             $car = new $className;
 
-            $car->engine = new Engine($car, ...$engine);
-            $car->leftFrontWheel = new Wheel($car, ...$wheels[0]);
-            $car->rightFrontWheel = new Wheel($car, ...$wheels[1]);
-            $car->leftRearWheel = new Wheel($car, ...$wheels[2]);
-            $car->rightRearWheel = new Wheel($car, ...$wheels[3]);
+            foreach ($arguments as $propertyName => $propertyAguments) {
+                $propertyClassName = array_shift($propertyAguments);
+                $car->{$propertyName} = new $propertyClassName($car, ...$propertyAguments);
+            }
 
             $car->initializeObject();
 

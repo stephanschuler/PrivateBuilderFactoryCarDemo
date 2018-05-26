@@ -3,6 +3,9 @@ declare(strict_types=1);
 
 namespace StephanSchuler\PrivateBuilderFactory\Builder;
 
+use StephanSchuler\PrivateBuilderFactory\Model\Engine;
+use StephanSchuler\PrivateBuilderFactory\Model\Wheel;
+
 class CarBuilder implements Builder
 {
     private $factory;
@@ -18,18 +21,24 @@ class CarBuilder implements Builder
 
     public function __invoke()
     {
-        return ($this->factory)($this->engine, $this->wheels);
+        return ($this->factory)([
+            'engine' => $this->engine,
+            'leftFrontWheel' => $this->wheels[0],
+            'rightFrontWheel' => $this->wheels[1],
+            'leftRearWheel' => $this->wheels[2],
+            'rightRearWheel' => $this->wheels[3],
+        ]);
     }
 
     public function setEngine(float $volume, int $performance): CarBuilder
     {
-        $this->engine = [$volume, $performance];
+        $this->engine = [Engine::class, $volume, $performance];
         return $this;
     }
 
     public function addWheel(int $size): CarBuilder
     {
-        $this->wheels[] = [$size];
+        $this->wheels[] = [Wheel::class, $size];
         return $this;
     }
 }
